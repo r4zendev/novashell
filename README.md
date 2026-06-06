@@ -2,6 +2,18 @@
 
 TypeScript shell layer for Hyprland, built with AGS + Astal.
 
+## Preview
+
+| Desktop                           | Terminal                            | Neovim                                  |
+| --------------------------------- | ----------------------------------- | --------------------------------------- |
+| ![Desktop](./preview/desktop.jpg) | ![Terminal](./preview/terminal.jpg) | ![Neovim](./preview/nvim-startup.jpg)   |
+
+| Telegram                            | Discord                           | YouTube Music                             |
+| ----------------------------------- | --------------------------------- | ----------------------------------------- |
+| ![Telegram](./preview/telegram.jpg) | ![Discord](./preview/discord.jpg) | ![YouTube Music](./preview/yt-music.jpg)  |
+
+> Live wallpaper-driven theming propagated across the desktop, terminal, editor, and apps.
+
 ## What it covers
 
 | Area          | Included                                                                                          |
@@ -59,7 +71,7 @@ pnpm install
 pnpm build
 ```
 
-In this dotfiles setup, binaries are symlinked into `~/.local/bin` (`novashell`, `nsh`).
+Symlink the build outputs into your `PATH`, e.g. `~/.local/bin` (`novashell`, `nsh`).
 
 ## Scope
 
