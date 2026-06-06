@@ -1,0 +1,134 @@
+name "Novashell CLI"
+bin "nsh"
+about "Control Novashell windows, media, theme, wallpaper, and runtime actions"
+
+cmd "help" help="Show command reference" {
+    alias "h"
+}
+
+cmd "version" help="Show Novashell version" {
+    alias "v"
+}
+
+cmd "open" help="Open a shell window" {
+    arg "<window>" help="Window name to open"
+}
+
+cmd "close" help="Close a shell window" {
+    arg "<window>" help="Window name to close"
+}
+
+cmd "toggle" help="Toggle a shell window" {
+    arg "<window>" help="Window name to toggle"
+}
+
+cmd "windows" help="List known windows and open/closed state"
+cmd "reopen" help="Reopen currently open windows"
+cmd "reload" help="Restart Novashell instance"
+cmd "quit" help="Quit Novashell main instance"
+cmd "build" help="Rebuild Novashell from source"
+
+cmd "runner" help="Toggle app runner window" {
+    arg "[initial_text]" help="Optional initial runner query"
+}
+
+cmd "run" help="Launch app or alias" {
+    arg "<app_or_alias>" help="Application id/command or %alias"
+    arg "[client_modifiers]" help="Optional Hyprland client modifiers"
+}
+
+cmd "peek-workspace-num" help="Temporarily show workspace numbers" {
+    arg "[millis]" help="Duration in milliseconds (default: 2200)"
+}
+
+cmd "volume" help="Control sink/source volume" {
+    cmd "help" help="Show volume command help" {
+        alias "h"
+    }
+
+    cmd "sink-set" help="Set sink volume" {
+        arg "<value>" help="Volume percent integer"
+    }
+
+    cmd "source-set" help="Set source volume" {
+        arg "<value>" help="Volume percent integer"
+    }
+
+    cmd "sink-mute" help="Toggle sink mute"
+    cmd "source-mute" help="Toggle source mute"
+
+    cmd "sink-increase" help="Increase sink volume" {
+        arg "<value>" help="Volume delta integer"
+    }
+
+    cmd "source-increase" help="Increase source volume" {
+        arg "<value>" help="Volume delta integer"
+    }
+
+    cmd "sink-decrease" help="Decrease sink volume" {
+        arg "<value>" help="Volume delta integer"
+    }
+
+    cmd "source-decrease" help="Decrease source volume" {
+        arg "<value>" help="Volume delta integer"
+    }
+}
+
+cmd "media" help="Control active media player" {
+    cmd "help" help="Show media command help" {
+        alias "h"
+    }
+
+    cmd "play" help="Play media"
+    cmd "pause" help="Pause media"
+    cmd "play-pause" help="Toggle play/pause"
+    cmd "stop" help="Stop media"
+    cmd "previous" help="Previous track"
+    cmd "next" help="Next track"
+    cmd "bus-name" help="Show active player bus name"
+    cmd "list" help="List available players"
+
+    cmd "select" help="Select active player by bus name" {
+        arg "<bus_name>" help="MPRIS bus name"
+    }
+}
+
+cmd "theme" help="Manage Novashell themes" {
+    cmd "help" help="Show theme command help" {
+        alias "h"
+    }
+
+    cmd "list" help="List available themes"
+    cmd "current" help="Show current theme id"
+
+    cmd "set" help="Apply theme by id" {
+        arg "<theme_id>" help="Theme id (for example: pywal, tokyo-night)"
+    }
+
+    cmd "sync" help="Sync colors from current wallpaper (pywal mode only)"
+}
+
+cmd "wallpaper" help="Manage wallpaper" {
+    cmd "help" help="Show wallpaper command help" {
+        alias "h"
+    }
+
+    cmd "set" help="Set wallpaper and sync colors when applicable" {
+        arg "<path>" help="Wallpaper path"
+    }
+
+    cmd "set-only" help="Set wallpaper without syncing colors" {
+        arg "<path>" help="Wallpaper path"
+    }
+
+    cmd "current" help="Show current wallpaper path"
+    cmd "pick" help="Open wallpaper picker"
+}
+
+cmd "dev" help="Development/debug helpers" {
+    cmd "help" help="Show dev command help" {
+        alias "h"
+    }
+
+    cmd "inspector" help="Open GTK inspector"
+}

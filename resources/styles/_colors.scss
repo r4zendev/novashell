@@ -1,0 +1,14 @@
+@use "sass:color";
+@use "./wal";
+
+$bg-primary: color.adjust($color: wal.$background, $lightness: 5%);
+$bg-secondary: color.adjust($color: wal.$background, $lightness: 10%);
+$bg-tertiary: color.adjust($color: wal.$background, $lightness: 15%);
+$bg-light: wal.$foreground;
+$bg-translucent: color.change($color: wal.$background, $alpha: 75%);
+$bg-translucent-primary: $bg-translucent;
+$bg-translucent-secondary: color.change($color: wal.$background, $alpha: 78%);
+$fg-primary: wal.$foreground;
+$fg-light: $bg-primary;
+$fg-disabled: color.adjust($color: wal.$foreground, $lightness: -11%);
+$accent: wal.$accent;
